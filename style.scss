@@ -1,0 +1,71 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+
+}
+@mixin border ($gen, $tip, $reng){
+    
+    border-width: $gen;
+    border-style: $tip;
+    border-color: $reng;
+
+
+}
+.box{
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+    float: left;
+    margin-right: 10px;
+
+}
+body{
+    background-color: rgb(173, 182, 182);
+    .container{
+        height: 1000px;
+        width: 900px;
+        margin: 0px auto;
+        background-color: rgb(162, 174, 180);
+        header{
+            height: 50px;
+            width: 900px;
+            background-color: rgb(140, 158, 177);
+            ul{
+                li{
+                    float: left;
+                    a{
+                      display: block;
+                      height: 50px;
+                      line-height: 50px;
+                      text-align: center;  
+                      width: 150px;
+                      text-decoration: none;
+                      font-size: 24px;
+                      color: rgb(165, 211, 196);
+                      &:hover{
+                        color: aqua;
+                      }
+
+                    }
+                }
+            }
+        }
+      .qutular{
+        height: 500px;
+        width: 700px;
+        margin: 20px auto;
+        background-color: cadetblue;
+
+
+      } 
+      .qutu1{
+       @extend .box ;
+       @include border(4px, dashed,green);
+      }
+      .qutu2{
+        @extend .box;
+        @include border(2px,solid, red );
+      } 
+    }
+}
